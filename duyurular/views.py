@@ -1,5 +1,12 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response, redirect
+from django.core.context_processors import csrf
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib import auth
 from models import *
+from forms import *
+from website.models import TestModel
 
 # Create your views here.
 from django.db.models import Q
@@ -38,8 +45,30 @@ def signin( request ):
 def signup( request):
 	pass
 
-def post_search( request):
-    return render_to_response("posts.html")
+@login_required(login_url='/duyurular/login')        
+def post_search( request ):
+	if request.method == 'POST':
+		form = CreatePostSearchForm(request.POST)
+	if form.is_valid():
+		tags=form.cleaned_data.get('tags')
+		word=form.cleaned_data.get('word')
+
+		tags = tags.split(',')
+		posts = Post.objects.select_related('pt_post',
+		'pt_tag').filter(pt_tag__content__contains=word)
+
+		result = []
+
+		for( tag in tags ):
+			list = posts.filter( pt_tag__text=tag )
+			result.append(list)
+			result = set(result)
+		return render_to_response("duyurular/post_search.html",{'campaign_list':campaign_list,
+			'word': word})
+	form = CreatePostSearchForm()
+	c = {"form": form}
+	c.update(csrf(request))
+	return render_to_response('duyurular/create_post_search.html',c)
 	
 @login_required(login_url="/duyurular/login")
 def single_post( request, post_id):
