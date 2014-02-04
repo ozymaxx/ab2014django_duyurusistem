@@ -5,8 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib import auth
 from models import *
-from forms import *
-from website.models import TestModel
+from django.forms import *
 
 # Create your views here.
 from django.db.models import Q
@@ -35,9 +34,9 @@ def signin( request ):
 	if request.method == 'POST':
 		user = authenticate(username=request.POST['username'],
 			password=request.POST['password'])
-			if user is not None:
-				auth.login(request, user)
-				return redirect('/duyurular/index')
+		if user is not None:
+			auth.login(request, user)
+			return redirect('/duyurular/index')
 	c = {}
 	c.update(csrf(request))
 	return render_to_response('duyurular/signin.html',c)
@@ -59,10 +58,11 @@ def post_search( request ):
 
 		result = []
 
-		for( tag in tags ):
+		for tag in tags:
 			list = posts.filter( pt_tag__text=tag )
 			result.append(list)
 			result = set(result)
+			
 		return render_to_response("duyurular/post_search.html",{'campaign_list':campaign_list,
 			'word': word})
 	form = CreatePostSearchForm()
