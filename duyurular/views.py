@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib import auth
 from models import *
+from forms import *
 from django.forms import *
 
 # Create your views here.
@@ -23,52 +24,54 @@ def create_post( request ):
 			created_by=request.POST['id'])
 
 		post.save()
-		return redirect('/duyurular/index')
+		return redirect('/index')
 	else:
 		form = CampaignForm()
 		c = {"form": form}
 		c.update(csrf(request))
 		return render_to_response('duyurular/create_post.html',c)                                         
-        
-def signin( request ):
-	if request.method == 'POST':
-		user = authenticate(username=request.POST['username'],
-			password=request.POST['password'])
-		if user is not None:
-			auth.login(request, user)
-			return redirect('/duyurular/index')
-	c = {}
-	c.update(csrf(request))
-	return render_to_response('duyurular/signin.html',c)
+
+def login(request ):
+    if request.user.is_authenticated():
+        return redirect("/posts")
+    if request.method == 'POST':
+        user = authenticate(username=request.POST['username'],password=request.POST['password'])
+        print user
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/posts')
+    form = LoginForm(request.POST)
+    c = {'form':form}
+    c.update(csrf(request))
+    return render_to_response('login.html',c)
 	
 def signup( request):
 	pass
 
-@login_required(login_url='/duyurular/login')        
+@login_required(login_url='/login/')
 def post_search( request ):
-	if request.method == 'POST':
-		form = CreatePostSearchForm(request.POST)
-	if form.is_valid():
-		tags=form.cleaned_data.get('tags')
-		word=form.cleaned_data.get('word')
+    if request.method == 'POST':
+        form = PostSearchForm(request.POST)
+        if form.is_valid():
+            tags=form.cleaned_data.get('tags')
+            word=form.cleaned_data.get('word')
 
-		tags = tags.split(',')
-		posts = Post.objects.select_related('pt_post',
-		'pt_tag').filter(pt_tag__content__contains=word)
+            tags = tags.split(',')
+            posts = Post.objects.select_related('pt_post',
+            'pt_tag').filter(pt_tag__content__contains=word)
 
-		result = []
+            result = []
 
-		for tag in tags:
-			list = posts.filter( pt_tag__text=tag )
-			result.append(list)
-			result = set(result)
-			
-		return render_to_response("duyurular/post_search.html",{'campaign_list':campaign_list,
-			'word': word})
-	form = CreatePostSearchForm()
-	c = {"form": form}
-	c.update(csrf(request))
-	return render_to_response('duyurular/create_post_search.html',c)
+            for tag in tags:
+                list = posts.filter( pt_tag__text=tag )
+                result.append(list)
+                result = set(result)
+
+            return render_to_response("duyurular/post_search.html",{'campaign_list':campaign_list,'word': word})
+    form = PostSearchForm()
+    c = {"form": form}
+    c.update(csrf(request))
+    return render_to_response('posts.html',c)
 	
 @login_required(login_url="/duyurular/login")
 def single_post( request, post_id):
@@ -87,9 +90,3 @@ def daily_post( request, year, month, day):
 	else:
 		c = {"daily_posts":daily_posts}
 		return render_to_response("duyurular/daily_posts.html",c)
-		
-def login( request):
-	if request.user.is_authenticated():
-		return redirect("/duyurular/posts")
-	else:
-		return render_to_response( "duyurular/login.html")
