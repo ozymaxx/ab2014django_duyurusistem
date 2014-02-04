@@ -12,7 +12,7 @@ urlpatterns = patterns('',
 	url(r'^signup/$', 'duyuru.views.signup', name='home'),
 	url(r'^posts/$', 'duyuru.views.post_search', name='home'),
 	url(r'^posts/(?P<post_id>\d+)/$', 'duyurusistem.views.single_post', name='home'),
-	url(r'^posts/$', 'duyurusistem.views.daily_post', name='home'),
+	url(r'^posts/(?P<year>\d+)/(?P<month>\d+)/(?P<day>\d+)/$', 'duyurusistem.views.daily_post', name='home'),
 	url(r'^login/$', 'duyuru.views.login', name='home'),
     url(r'^admin/', include(admin.site.urls)),
 )
