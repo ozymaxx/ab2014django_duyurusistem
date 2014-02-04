@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b52a20c6-4337-4e21-9cd8-f057718f8435" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/duyurusistem/settings.py" afterPath="$PROJECT_DIR$/duyurusistem/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/posts.html" afterPath="$PROJECT_DIR$/templates/posts.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/duyurusistem/urls.py" afterPath="$PROJECT_DIR$/duyurusistem/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/duyurular/views.py" afterPath="$PROJECT_DIR$/duyurular/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ab2014django_duyurusistem-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/duyurular/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="585">
+            <state line="18" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
               <folding />
             </state>
           </provider>
@@ -40,25 +38,9 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/duyurusistem/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="31" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="15" column="52" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/duyurular/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-              <folding>
-                <marker date="1391508731369" expanded="true" signature="110:119" placeholder="..." />
-                <marker date="1391508731369" expanded="true" signature="143:149" placeholder="..." />
-                <marker date="1391508731369" expanded="true" signature="177:221" placeholder="..." />
-                <marker date="1391508731369" expanded="true" signature="259:268" placeholder="..." />
-                <marker date="1391508731369" expanded="true" signature="314:323" placeholder="..." />
-                <marker date="1391508731369" expanded="true" signature="346:355" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -73,10 +55,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="posts.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/posts.html">
+      <file leaf-file-name="footer.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="13" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.65451056" vertical-offset="934" max-vertical-offset="1455">
+            <state line="9" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="50" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.47003746" vertical-offset="469" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
@@ -130,10 +121,12 @@
         <option value="$PROJECT_DIR$/duyurular/models.py" />
         <option value="$PROJECT_DIR$/template/posts.html" />
         <option value="$PROJECT_DIR$/static/css/sticky-footer-navbar.css" />
-        <option value="$PROJECT_DIR$/duyurusistem/urls.py" />
         <option value="$PROJECT_DIR$/duyurular/views.py" />
         <option value="$PROJECT_DIR$/duyurusistem/settings.py" />
+        <option value="$PROJECT_DIR$/templates/footer.html" />
         <option value="$PROJECT_DIR$/templates/posts.html" />
+        <option value="$PROJECT_DIR$/duyurusistem/urls.py" />
+        <option value="$PROJECT_DIR$/templates/header.html" />
       </list>
     </option>
   </component>
@@ -482,46 +475,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/duyurular/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/duyurusistem/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="31" selection-start="658" selection-end="658" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/duyurular/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding>
-            <marker date="1391508731369" expanded="true" signature="110:119" placeholder="..." />
-            <marker date="1391508731369" expanded="true" signature="143:149" placeholder="..." />
-            <marker date="1391508731369" expanded="true" signature="177:221" placeholder="..." />
-            <marker date="1391508731369" expanded="true" signature="259:268" placeholder="..." />
-            <marker date="1391508731369" expanded="true" signature="314:323" placeholder="..." />
-            <marker date="1391508731369" expanded="true" signature="346:355" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/duyurusistem/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="37" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0" vertical-offset="912" max-vertical-offset="1470">
           <folding />
         </state>
       </provider>
@@ -533,6 +489,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/duyurusistem/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="37" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0" vertical-offset="912" max-vertical-offset="1470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="315" selection-end="315" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/posts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="653" selection-end="653" vertical-scroll-proportion="0.40307102" vertical-offset="0" max-vertical-offset="521">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/sticky-footer-navbar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="23" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
@@ -540,9 +517,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/posts.html">
+    <entry file="file://$PROJECT_DIR$/duyurular/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="13" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.65451056" vertical-offset="934" max-vertical-offset="1455">
+        <state line="18" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/duyurular/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="39" selection-start="217" selection-end="217" vertical-scroll-proportion="0.2956989" vertical-offset="0" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/duyurusistem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="52" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="50" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.47003746" vertical-offset="469" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
