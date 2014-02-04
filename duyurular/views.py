@@ -4,8 +4,36 @@ from models import *
 # Create your views here.
 from django.db.models import Q
 
-def create_post( request):
-    pass
+@login_required(login_url='/duyurular/login')
+def create_post( request ):
+	if request.method == 'POST':
+		form = CreatePostForm(request.POST)
+	if form.is_valid():
+		post = Post( title=form.cleaned_data.get('title'),
+			content=form.cleaned_data.get('content'),
+			upvote=form.cleaned_data.get('upvote'),
+			downvote=form.cleaned_data.get('downvote'),
+			created_at=form.cleaned_data.get('created_at'),
+			created_by=request.POST['id'])
+
+		post.save()
+		return redirect('/duyurular/index')
+	else:
+		form = CampaignForm()
+		c = {"form": form}
+		c.update(csrf(request))
+		return render_to_response('duyurular/create_post.html',c)                                         
+        
+def signin( request ):
+	if request.method == 'POST':
+		user = authenticate(username=request.POST['username'],
+			password=request.POST['password'])
+			if user is not None:
+				auth.login(request, user)
+				return redirect('/duyurular/index')
+	c = {}
+	c.update(csrf(request))
+	return render_to_response('duyurular/signin.html',c)
 	
 def signup( request):
 	pass
